@@ -1,6 +1,11 @@
+const path = require('path');
+
+//  define the root path to the app
+const root = path.join(__dirname, './app');
+
 module.exports = {
   // sets path from which the entrypoint references
-  context: `${__dirname}/app`,
+  context: root,
 
   // the main file to start processing
   entry: './main.js',
@@ -22,7 +27,19 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.scss$/,
+        exclude: /(node_modules|bower_components)/,
+        loaders: ['style', 'css?localIdentName=[name]__[local]___[hash:base64:5]', 'sass']
       }
     ]
+  },
+
+  resolve: {
+    // resolve files names so they don't have to be specified in the import
+    extensions: ['', '.js', '.scss'],
+    // set the root so import's don't have to prefixed with ./
+    root: [root]
   }
 };
