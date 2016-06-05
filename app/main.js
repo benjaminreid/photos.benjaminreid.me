@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import store from './store';
-import App from './components/app';
-import Index from './views/index';
+import store from 'store';
+import App from 'components/app';
+import Index from 'views/index';
 
 const history = syncHistoryWithStore(browserHistory, store);
 
