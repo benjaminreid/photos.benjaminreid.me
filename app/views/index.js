@@ -1,15 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Collections from 'components/Collections';
 
-function Index() {
-  var data = [0, 1, 2, 3];
-
-  return (
-    <div>
-      <Collections collections={data}></Collections>
-    </div>
-  );
+class Index extends React.Component {
+  render() {
+    return (
+      <div>
+        <Collections collections={this.props.collections}></Collections>
+      </div>
+    );
+  }
 }
 
-export default Index;
+const mapStateToProps = (state) => {
+  return {
+    collections: state.collections
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index);
