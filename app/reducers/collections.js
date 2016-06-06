@@ -1,4 +1,10 @@
-const initialState = [1, 2, 3, 4, 5];
+const initialState = [
+  {
+    name: 'Bristol'
+  }, {
+    name: 'Leigh Woods'
+  }
+];
 
 const store = function(state = initialState, action) {
   return state;

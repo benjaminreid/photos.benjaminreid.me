@@ -3,8 +3,8 @@ import React from 'react';
 import CollectionItem from 'components/CollectionItem';
 
 function Collections({ collections }) {
-  var $collections = collections.map((id, key) => {
-    return <CollectionItem key={key} id={id} />
+  var $collections = collections.map((props, key) => {
+    return <CollectionItem {...props} key={key}/>
   });
 
   return (
