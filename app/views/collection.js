@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import Photos from 'components/Photos';
 import Lightbox from 'components/Lightbox';
 
@@ -19,6 +20,7 @@ class Collection extends React.Component {
   render() {
     return (
       <div>
+        <Link to='/'>Back to collections</Link>
         <h1>{this.props.collection.name}</h1>
         <Photos photos={this.props.photos}/>
         {this.renderLightbox()}
