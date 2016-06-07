@@ -12,7 +12,7 @@ class Collection extends React.Component {
         return photo.id == id;
       })[0];
 
-      return <Lightbox url={photo.url}/>;
+      return <Lightbox url={photo.large_url}/>;
     }
   }
 
