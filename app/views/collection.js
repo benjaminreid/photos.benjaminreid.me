@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Photos from 'components/Photos';
 
 class Collection extends React.Component {
   render() {
     return (
       <div>
         <h1>{this.props.collection.name}</h1>
+        <Photos photos={[{ url: 'foo' }, { url: 'bar' }]}/>
       </div>
     );
   }
