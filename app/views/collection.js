@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Photos from 'components/Photos';
+import Lightbox from 'components/Lightbox';
 
 class Collection extends React.Component {
   render() {
@@ -8,6 +9,7 @@ class Collection extends React.Component {
       <div>
         <h1>{this.props.collection.name}</h1>
         <Photos photos={this.props.photos}/>
+        <Lightbox/>
       </div>
     );
   }
