@@ -7,6 +7,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import store from 'store';
 import App from 'components/app';
 import Index from 'views/index';
+import Collection from 'views/collection';
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -15,6 +16,7 @@ render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Index}/>
+        <Route path="/collection/:collectionId" component={Collection}/>
       </Route>
     </Router>
   </Provider>,

@@ -25,7 +25,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react', 'stage-2']
         }
       },
       {
@@ -41,5 +41,10 @@ module.exports = {
     extensions: ['', '.js', '.scss'],
     // set the root so import's don't have to prefixed with ./
     root: [root]
+  },
+
+  // allows for the dev server to work with the history API
+  devServer: {
+    historyApiFallback: true
   }
 };
