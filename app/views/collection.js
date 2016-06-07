@@ -7,7 +7,7 @@ class Collection extends React.Component {
     return (
       <div>
         <h1>{this.props.collection.name}</h1>
-        <Photos photos={[{ url: 'foo' }, { url: 'bar' }]}/>
+        <Photos photos={this.props.photos}/>
       </div>
     );
   }
@@ -18,8 +18,13 @@ const mapStateToProps = (state, ownProps) => {
     return collection.id == ownProps.params.collectionId;
   })[0];
 
+  const photos = state.photos.filter((photo) => {
+    return photo.collection_id == collection.id;
+  });
+
   return {
-    collection
+    collection,
+    photos
   };
 };
 

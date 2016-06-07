@@ -7,7 +7,7 @@ function PhotoItem({ url }) {
 
   return (
     <div className={base}>
-      {url}
+      <img src={url}/>
     </div>
   );
 }
