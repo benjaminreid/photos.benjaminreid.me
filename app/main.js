@@ -17,6 +17,7 @@ render(
       <Route path="/" component={App}>
         <IndexRoute component={Index}/>
         <Route path="/collection/:collectionId" component={Collection}/>
+        <Route path="/collection/:collectionId/:photoId" component={Collection}/>
       </Route>
     </Router>
   </Provider>,

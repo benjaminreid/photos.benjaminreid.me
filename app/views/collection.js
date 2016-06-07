@@ -4,12 +4,24 @@ import Photos from 'components/Photos';
 import Lightbox from 'components/Lightbox';
 
 class Collection extends React.Component {
+  renderLightbox() {
+    const id = this.props.params.photoId;
+
+    if (id) {
+      const photo = this.props.photos.filter((photo) => {
+        return photo.id == id;
+      })[0];
+
+      return <Lightbox url={photo.url}/>;
+    }
+  }
+
   render() {
     return (
       <div>
         <h1>{this.props.collection.name}</h1>
         <Photos photos={this.props.photos}/>
-        <Lightbox/>
+        {this.renderLightbox()}
       </div>
     );
   }
