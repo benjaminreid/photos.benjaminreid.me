@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import styles from 'styles/components/photo-item';
+import styles from 'styles/components/lightbox';
 
 function Lightbox() {
   let base = classNames(styles.base);
