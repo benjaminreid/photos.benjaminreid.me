@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import Photos from 'components/Photos';
 import Lightbox from 'components/Lightbox';
 
-class Collection extends React.Component {
+class CollectionView extends React.Component {
   renderLightbox() {
     const id = this.props.params.photoId;
 
@@ -29,23 +29,4 @@ class Collection extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  const collection = state.collections.filter((collection) => {
-    return collection.id == ownProps.params.collectionId;
-  })[0];
-
-  const photos = state.photos.filter((photo) => {
-    return photo.collection_id == collection.id;
-  });
-
-  return {
-    collection,
-    photos
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Collection);
+export default CollectionView;
