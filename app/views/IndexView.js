@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import Collections from 'components/Collections';
 
 class IndexView extends React.Component {
+  componentDidMount() {
+    this.props.getCollections();
+  }
+
   render() {
     return (
       <div>

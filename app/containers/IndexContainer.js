@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import IndexView from 'views/IndexView';
+import { getCollections } from 'actions/collections';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,7 +9,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    getCollections() {
+      dispatch(getCollections());
+    }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(IndexView);
