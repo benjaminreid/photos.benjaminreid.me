@@ -1,14 +1,11 @@
-const initialState = [
-  {
-    id: 1,
-    name: 'Bristol'
-  }, {
-    id: 2,
-    name: 'Leigh Woods'
-  }
-];
+import { LOADED_COLLECTIONS } from 'actions/collections';
 
-const store = function(state = initialState, action) {
+const store = function(state = [], action) {
+  switch(action.type) {
+    case LOADED_COLLECTIONS:
+      return [...action.payload];
+  }
+
   return state;
 };
 
