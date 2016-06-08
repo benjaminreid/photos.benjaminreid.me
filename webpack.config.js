@@ -2,6 +2,7 @@ const path = require('path');
 
 //  define the root path to the app
 const root = path.join(__dirname, './app');
+const build = path.join(__dirname, './build');
 
 module.exports = {
   // sets path from which the entrypoint references
@@ -12,7 +13,7 @@ module.exports = {
 
   output: {
     // the directory in which the file should be ouput too
-    path: __dirname,
+    path: build,
     // the name of the file to ouput
     filename: 'bundle.js'
   },
@@ -45,6 +46,7 @@ module.exports = {
 
   // allows for the dev server to work with the history API
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    contentBase: build
   }
 };
